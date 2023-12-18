@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "isolatedModules": true,
+    "outDir": "./dist/types",
+    "lib": [
+      "es2020",
+      "DOM"
+    ],
+    "paths": {
+      "rollup-build/*": [
+        "./src/*"
+      ]
+    },
+  },
+  "include": [
+    "./src/**/*",
+    "../use-rollup/src/index.d.ts",
+    "../use-rollup/src/test.ts"
+  ]
+}

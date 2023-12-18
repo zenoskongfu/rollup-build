@@ -1,0 +1,44 @@
+{
+	"name": "rollup-build",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./dist/index.js",
+	"types": "./dist/types",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prebuild1": "rimraf dist && tsc",
+		"build": "rollup -c",
+		"build:watch": "rollup -c -w",
+		"ts:watch": "tsc --watch",
+		"dev": "cd ./dev && vite"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@babel/core": "^7.23.6",
+		"@babel/preset-react": "^7.23.3",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-typescript": "^11.1.5",
+		"@types/react": "^18.2.45",
+		"@types/react-dom": "^18.2.18",
+		"esbuild": "^0.19.9",
+		"postcss": "^8.4.32",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"rimraf": "^5.0.5",
+		"rollup": "^4.8.0",
+		"rollup-external-modules": "^2.0.0",
+		"rollup-plugin-esbuild": "^6.1.0",
+		"rollup-plugin-node-externals": "^6.1.2",
+		"rollup-plugin-postcss": "^4.0.2",
+		"tslib": "^2.6.2",
+		"typescript": "^5.3.3",
+		"vite": "^5.0.10"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-react": "^4.2.1"
+	}
+}
