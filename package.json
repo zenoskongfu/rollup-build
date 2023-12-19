@@ -1,13 +1,15 @@
 {
-	"name": "@zenos/rollup-build",
+	"name": "rollup-build",
 	"version": "1.0.0",
 	"description": "",
 	"main": "./dist/index.js",
 	"types": "./dist/types",
+	"module": "./dist/es/index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"prebuild1": "rimraf dist && tsc",
-		"build": "rollup -c",
+		"prebuild": "rimraf dist && tsc",
+		"build": "npm run build:es",
+		"build:es": "rollup -c ./config/rollup.config.es.mjs",
 		"build:watch": "rollup -c -w",
 		"ts:watch": "tsc --watch",
 		"dev": "cd ./dev && vite"
@@ -39,6 +41,7 @@
 		"vite": "^5.0.10"
 	},
 	"devDependencies": {
+		"@babel/preset-env": "^7.23.6",
 		"@vitejs/plugin-react": "^4.2.1"
 	}
 }
