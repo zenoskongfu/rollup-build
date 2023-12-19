@@ -26,11 +26,6 @@ module.exports = {
 			exclude: /nodex_module/,
 			// babelHelpers: "runtime",
 		}),
-		// nodeExternals(),
-		// esbuild.default({
-		// 	target: "es2015",
-		// }),
 	],
-	// external: rollupExternalModules,
 	external: ["react", "react-dom", "react/jsx-runtime"],
 };
