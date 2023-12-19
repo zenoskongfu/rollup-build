@@ -2,14 +2,16 @@
 	"name": "rollup-build",
 	"version": "1.0.0",
 	"description": "",
-	"main": "./dist/index.js",
+	"main": "./dist/cjs/index.js",
 	"types": "./dist/types",
 	"module": "./dist/es/index.js",
+	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"prebuild": "rimraf dist && tsc",
-		"build": "npm run build:es",
+		"build": "npm run build:es & npm run build:cjs",
 		"build:es": "rollup -c ./config/rollup.config.es.mjs",
+		"build:cjs": "rollup -c ./config/rollup.config.cjs.mjs",
 		"build:watch": "rollup -c -w",
 		"ts:watch": "tsc --watch",
 		"dev": "cd ./dev && vite"

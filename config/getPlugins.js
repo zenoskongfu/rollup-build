@@ -1,22 +1,22 @@
 import resolve from "@rollup/plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
-import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
-const { babel } = require("@rollup/plugin-babel");
+import { babel } from "@rollup/plugin-babel";
 import esbuild from "rollup-plugin-esbuild";
-import rollupExternalModules from "rollup-external-modules";
+import nodeExternals from "rollup-plugin-node-externals";
 
-const basePlugins = [resolve(), commonjs(), postcss(), esbuild()];
+const basePlugins = [resolve(), commonjs(), postcss(), nodeExternals(), esbuild()];
 
 export const esmPlugins = basePlugins;
 
-export const umdPlugins = [...basePlugins].push(
+export const umdPlugins = [
+	...basePlugins,
 	babel({
 		presets: [
 			[
 				"@babel/preset-env",
 				{
-					targets: [">0.2%", "not dead", "not op_mini all"],
+					targets: [">0.2%", "not dead", "not op_mini all", "chrome 40"],
 					corejs: 3,
 					useBuiltIns: "useage",
 				},
@@ -30,7 +30,7 @@ export const umdPlugins = [...basePlugins].push(
 				},
 			],
 		],
-		exclude: /nodex_module/,
+		exclude: /node_modules/,
 		babelHelpers: "runtime",
-	})
-);
+	}),
+];

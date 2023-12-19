@@ -1,4 +1,4 @@
-import { esmPlugins } from "./getPlugins";
+import { esmPlugins } from "./getPlugins.js";
 
 /**@type {import('rollup').RollupOptions} */
 export default {

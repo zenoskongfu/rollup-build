@@ -6,6 +6,7 @@
     "baseUrl": "./",
     "jsx": "react-jsx",
     "declaration": true,
+    "esModuleInterop": true,
     "emitDeclarationOnly": true,
     "isolatedModules": true,
     "outDir": "./dist/types",
