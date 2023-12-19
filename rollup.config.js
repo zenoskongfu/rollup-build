@@ -31,6 +31,5 @@ module.exports = {
 		// 	target: "es2015",
 		// }),
 	],
-	// external: rollupExternalModules,
-	external: ["react", "react-dom", "react/jsx-runtime"],
+	external: rollupExternalModules,
 };
