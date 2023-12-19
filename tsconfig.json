@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
+    "rootDirs": [
+      "./src"
+    ],
     "baseUrl": "./",
     "jsx": "react-jsx",
     "declaration": true,
@@ -18,8 +20,6 @@
     },
   },
   "include": [
-    "./src/**/*",
-    "../use-rollup/src/index.d.ts",
-    "../use-rollup/src/test.ts"
+    "./src/**/*"
   ]
 }
