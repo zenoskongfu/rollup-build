@@ -8,7 +8,6 @@
     "esModuleInterop": true,
     "emitDeclarationOnly": true,
     "isolatedModules": true,
-    "noEmitOnError": true,
     "outDir": "./dist/types",
     "lib": [
       "es2020",
