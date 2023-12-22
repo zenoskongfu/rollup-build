@@ -4,9 +4,14 @@ import { umdPlugins } from "./getPlugins.js";
 export default {
 	input: "./src/index.tsx",
 	output: {
-		file: "./dist/cjs/rollup-build.js",
-		format: "cjs",
+		file: "./dist/umd/rollup-build.js",
+		format: "umd",
+		name: "RB",
 		sourcemap: true,
+		globals: {
+			react: "React",
+			"react-dom": "ReactDOM",
+		},
 	},
 	plugins: umdPlugins,
 };

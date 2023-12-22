@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
-    "rootDirs": [
-      "./src"
-    ],
+    "rootDir": "./src",
     "baseUrl": "./",
     "jsx": "react-jsx",
+    "noEmitOnError": true,
     "declaration": true,
     "esModuleInterop": true,
     "emitDeclarationOnly": true,

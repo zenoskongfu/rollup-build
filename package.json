@@ -2,16 +2,18 @@
 	"name": "rollup-build",
 	"version": "1.0.0",
 	"description": "",
-	"main": "./dist/cjs/index.js",
+	"main": "./dist/umd/rollup-build.js",
 	"types": "./dist/types",
 	"module": "./dist/es/index.js",
 	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"prebuild": "rimraf dist && tsc",
-		"build": "npm run build:es & npm run build:cjs",
+		"build2": "rollup -c ./config/rollup.config.js",
+		"build": "npm run build:es & npm run build:umd & npm run build:iife",
 		"build:es": "rollup -c ./config/rollup.config.es.mjs",
-		"build:cjs": "rollup -c ./config/rollup.config.cjs.mjs",
+		"build:umd": "rollup -c ./config/rollup.config.umd.mjs",
+		"build:iife": "rollup -c ./config/rollup.config.iife.mjs",
 		"build:watch": "rollup -c -w",
 		"ts:watch": "tsc --watch",
 		"dev": "cd ./dev && vite"
@@ -21,13 +23,16 @@
 	"license": "ISC",
 	"dependencies": {
 		"@babel/core": "^7.23.6",
+		"@babel/preset-env": "^7.23.6",
 		"@babel/preset-react": "^7.23.3",
 		"@rollup/plugin-babel": "^6.0.4",
 		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-image": "^3.0.3",
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-typescript": "^11.1.5",
 		"@types/react": "^18.2.45",
 		"@types/react-dom": "^18.2.18",
+		"babel-core": "^6.26.3",
 		"esbuild": "^0.19.9",
 		"postcss": "^8.4.32",
 		"react": "^18.2.0",
@@ -43,7 +48,9 @@
 		"vite": "^5.0.10"
 	},
 	"devDependencies": {
-		"@babel/preset-env": "^7.23.6",
-		"@vitejs/plugin-react": "^4.2.1"
+		"@babel/plugin-transform-runtime": "^7.23.6",
+		"@swc/helpers": "^0.5.3",
+		"@vitejs/plugin-react": "^4.2.1",
+		"esbuild-plugin-es5": "^2.1.0"
 	}
 }

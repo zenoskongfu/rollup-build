@@ -1,7 +1,7 @@
-const { default: viteReact } = require("@vitejs/plugin-react");
-const path = require("path");
+import viteReact from "@vitejs/plugin-react";
+import path from "path";
 /**@type {import('vite').UserConfig} */
-module.exports = {
+export default {
 	Plugin: [viteReact()],
 	server: {
 		open: true,
