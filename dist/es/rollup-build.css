@@ -1,0 +1,23 @@
+.button-container button {
+  height: 50px;
+  width: 150px;
+  background-color: lightskyblue;
+  line-height: 50px;
+  border-radius: 10px;
+  border: none;
+}
+
+.button-container button:active {
+  background-color: lightblue;
+}
+.index-module_input-container__Zu8TC {
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+}
+.logo-container {
+  width: 100px;
+  height: 100px;
+}
