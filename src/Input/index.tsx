@@ -1,7 +1,7 @@
-import './index.css';
+import inputStyle from './index.module.css';
 
 const Input = () => {
-  return <div className="input-container">
+  return <div className={inputStyle['input-container']}>
     <span className="label">input anything: </span>
     <input></input>
   </div>

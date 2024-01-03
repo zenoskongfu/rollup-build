@@ -1,5 +1,5 @@
 import { useState } from "react"
-import './index.css';
+import './index.scss';
 const Button = (props: { contents: string }) => {
   const [count, setCount] = useState(0);
   return <div className="button-container"><button onClick={() => setCount(count + 1)}>count: {count}</button>
