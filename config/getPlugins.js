@@ -6,7 +6,14 @@ import resolve from "@rollup/plugin-node-resolve";
 import esbuild from "rollup-plugin-esbuild";
 import nodeExternals from "rollup-plugin-node-externals";
 import postcss from "rollup-plugin-postcss";
-const basePlugins = [resolve(), commonjs(), postcss({ extract: "rollup-build.css" }), image()];
+const basePlugins = [
+	resolve(),
+	commonjs(),
+	postcss({
+		extract: "rollup-build.css",
+	}),
+	image(),
+];
 
 export const esmPlugins = [...basePlugins, nodeExternals(), esbuild()];
 
@@ -43,6 +50,7 @@ export const iifePlugins = [
 				"@babel/preset-env",
 				{
 					targets: "> 0.25%, not dead, IE 10",
+					corejs: 3,
 				},
 			],
 		],
